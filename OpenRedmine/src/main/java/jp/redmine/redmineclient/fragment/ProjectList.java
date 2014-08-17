@@ -19,6 +19,7 @@ import com.actionbarsherlock.widget.SearchView;
 import com.j256.ormlite.android.apptools.OrmLiteListFragment;
 
 import jp.redmine.redmineclient.R;
+import jp.redmine.redmineclient.activity.WebViewActivity;
 import jp.redmine.redmineclient.activity.handler.ConnectionActionInterface;
 import jp.redmine.redmineclient.activity.handler.IssueActionInterface;
 import jp.redmine.redmineclient.adapter.ProjectListAdapter;
@@ -29,6 +30,7 @@ import jp.redmine.redmineclient.fragment.form.IssueJumpForm;
 import jp.redmine.redmineclient.fragment.helper.ActivityHandler;
 import jp.redmine.redmineclient.model.ConnectionModel;
 import jp.redmine.redmineclient.param.ConnectionArgument;
+import jp.redmine.redmineclient.param.WebArgument;
 import jp.redmine.redmineclient.task.SelectProjectTask;
 import uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock.PullToRefreshLayout;
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
@@ -283,6 +285,17 @@ public class ProjectList extends OrmLiteListFragment<DatabaseCacheHelper> {
 				ConnectionArgument input = new ConnectionArgument();
 				input.setArgument(getArguments());
 				mConnectionListener.onConnectionEdit(input.getConnectionId());
+				return true;
+			}
+			case R.id.menu_web:
+			{
+				ConnectionArgument input = new ConnectionArgument();
+				input.setArgument(getArguments());
+				WebArgument intent = new WebArgument();
+				intent.setIntent(getActivity().getApplicationContext(), WebViewActivity.class);
+				intent.importArgument(input);
+				intent.setUrl("");
+				getActivity().startActivity(intent.getIntent());
 				return true;
 			}
 		}

@@ -10,6 +10,10 @@
         android:icon="@drawable/ic_action_refresh"
         android:numericShortcut="5"
         android:alphabeticShortcut="r" />
+	<item android:id="@+id/menu_web"
+		  android:showAsAction="ifRoom"
+		  android:title="@string/web"
+		  android:icon="@android:drawable/ic_menu_mapmode" />
 
 
 </menu>
