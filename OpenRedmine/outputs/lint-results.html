@@ -18,17 +18,21 @@ document.getElementById(id+'Link').style.display = 'none';
 <body>
 <h1>Lint Report</h1>
 <div class="titleSeparator"></div>
-Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
-2 errors and 136 warnings found:<br/><br/>
+Check performed at Thu Apr 16 21:47:38 UTC 2015.<br/>
+2 errors and 140 warnings found:<br/><br/>
 <table class="overview">
 <tr><td></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">15</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
+<td class="countColumn">14</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
 <a href="#InflateParams">InflateParams: Layout Inflation without a Parent</a>
 </td></tr>
 <tr>
-<td class="countColumn">8</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
+<td class="countColumn">2</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
+<a href="#GradleDependency">GradleDependency: Obsolete Gradle Dependency</a>
+</td></tr>
+<tr>
+<td class="countColumn">10</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
 <a href="#GradleDynamicVersion">GradleDynamicVersion: Gradle Dynamic Version</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
@@ -54,6 +58,10 @@ Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
 <a href="#ExportedContentProvider">ExportedContentProvider: Content provider does not require permission</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><img border="0" align="top" src="lint-results_files/lint-warning.png" alt="Warning" />
+<a href="#ExportedService">ExportedService: Exported service does not require permission</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
@@ -120,21 +128,13 @@ Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
 <div class="id"><a href="#" title="Return to top">InflateParams: Layout Inflation without a Parent</a><div class="issueSeparator"></div>
 </div>
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/ConnectionList.java">../../src/main/java/jp/redmine/redmineclient/fragment/ConnectionList.java</a>:98</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno">  95</span> 	@Override
-<span class="lineno">  96</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-<span class="lineno">  97</span> 			Bundle savedInstanceState) {
-<span class="lineno">  98</span> 		mFooter = inflater.inflate(R.layout.listview_add,<span class="errorspan">null);</span>
-<span class="lineno">  99</span> 		return super.onCreateView(inflater, container, savedInstanceState);
-<span class="lineno"> 100</span> 	}
-</pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/FavoriteProjectListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/FavoriteProjectListAdapter.java</a>:31</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno">  28</span> 	@Override
-<span class="lineno">  29</span> 	public View getHeaderView(int i, View convertView, ViewGroup parent) {
-<span class="lineno">  30</span> 		if (convertView == null) {
-<span class="lineno">  31</span> 			convertView = infrator.inflate(R.layout.listheader_connection, <span class="errorspan">null);</span>
-<span class="lineno">  32</span> 		}
-<span class="lineno">  33</span> 		if(convertView == null)
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/ConnectionList.java">../../src/main/java/jp/redmine/redmineclient/fragment/ConnectionList.java</a>:97</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno">  94</span> 	@Override
+<span class="lineno">  95</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<span class="lineno">  96</span> 			Bundle savedInstanceState) {
+<span class="lineno">  97</span> 		mFooter = inflater.inflate(R.layout.listview_add,<span class="errorspan">null);</span>
+<span class="lineno">  98</span> 		return super.onCreateView(inflater, container, savedInstanceState);
+<span class="lineno">  99</span> 	}
 </pre>
 <span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/IssueDetailAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/IssueDetailAdapter.java</a>:97</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
 <span class="lineno">  94</span> 			convertView = null;
@@ -144,24 +144,22 @@ Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
 <span class="lineno">  98</span> 			convertView.setTag(R.layout.listheader_journal);
 <span class="lineno">  99</span> 		}
 </pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java</a>:162</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno"> 159</span> 	@Override
-<span class="lineno"> 160</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-<span class="lineno"> 161</span> 			Bundle savedInstanceState) {
-<span class="lineno"> 162</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
-<span class="lineno"> 163</span> 		mFooter.setVisibility(View.GONE);
-<span class="lineno"> 164</span> 		mHeader = inflater.inflate(R.layout.listheader_filter,null);
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java</a>:169</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno"> 166</span> 	@Override
+<span class="lineno"> 167</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<span class="lineno"> 168</span> 			Bundle savedInstanceState) {
+<span class="lineno"> 169</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
+<span class="lineno"> 170</span> 		mFooter.setVisibility(View.GONE);
+<span class="lineno"> 171</span> 		mHeader = inflater.inflate(R.layout.listheader_filter,null);
 </pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java</a>:164</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno"> 161</span> 			Bundle savedInstanceState) {
-<span class="lineno"> 162</span> 		mFooter = inflater.inflate(R.layout.listview_footer,null);
-<span class="lineno"> 163</span> 		mFooter.setVisibility(View.GONE);
-<span class="lineno"> 164</span> 		mHeader = inflater.inflate(R.layout.listheader_filter,<span class="errorspan">null);</span>
-<span class="lineno"> 165</span> 		View view = super.onCreateView(inflater, container, savedInstanceState);
-<span class="lineno"> 166</span> 		ListFragmentSwipeRefreshLayout.ViewRefreshLayout result
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueList.java</a>:171</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno"> 168</span> 			Bundle savedInstanceState) {
+<span class="lineno"> 169</span> 		mFooter = inflater.inflate(R.layout.listview_footer,null);
+<span class="lineno"> 170</span> 		mFooter.setVisibility(View.GONE);
+<span class="lineno"> 171</span> 		mHeader = inflater.inflate(R.layout.listheader_filter,<span class="errorspan">null);</span>
+<span class="lineno"> 172</span> 		View view = super.onCreateView(inflater, container, savedInstanceState);
+<span class="lineno"> 173</span> 		ListFragmentSwipeRefreshLayout.ViewRefreshLayout result
 </pre>
-<button id="InflateParamsDivLink" onclick="reveal('InflateParamsDiv');" />+ 10 More Occurrences...</button>
-<div id="InflateParamsDiv" style="display: none">
 <span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/IssueStickyListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/IssueStickyListAdapter.java</a>:137</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
 <span class="lineno"> 134</span> 		} else {
 <span class="lineno"> 135</span> 			LayoutInflater infalInflater = (LayoutInflater) parent.getContext()
@@ -170,13 +168,15 @@ Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
 <span class="lineno"> 138</span> 			if (convertView != null){
 <span class="lineno"> 139</span> 				TextView text = (TextView) convertView.findViewById(R.id.textTitle);
 </pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java</a>:183</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno"> 180</span> 	@Override
-<span class="lineno"> 181</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-<span class="lineno"> 182</span> 			Bundle savedInstanceState) {
-<span class="lineno"> 183</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
-<span class="lineno"> 184</span> 		mFooter.setVisibility(View.GONE);
-<span class="lineno"> 185</span> 		View view = inflater.inflate(R.layout.page_issue, container, false);
+<button id="InflateParamsDivLink" onclick="reveal('InflateParamsDiv');" />+ 9 More Occurrences...</button>
+<div id="InflateParamsDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java</a>:180</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno"> 177</span> 	@Override
+<span class="lineno"> 178</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<span class="lineno"> 179</span> 			Bundle savedInstanceState) {
+<span class="lineno"> 180</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
+<span class="lineno"> 181</span> 		mFooter.setVisibility(View.GONE);
+<span class="lineno"> 182</span> 		View view = inflater.inflate(R.layout.page_issue, container, false);
 </pre>
 <span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/JournalListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/JournalListAdapter.java</a>:409</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
 <span class="lineno"> 406</span> 			convertView = null;
@@ -202,21 +202,21 @@ Check performed at Tue Mar 03 18:44:49 UTC 2015.<br/>
 <span class="lineno"> 108</span> 		mFooter.setVisibility(View.GONE);
 <span class="lineno"> 109</span> 		View view = super.onCreateView(inflater, container, savedInstanceState);
 </pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java">../../src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java</a>:120</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno"> 117</span> 	@Override
-<span class="lineno"> 118</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-<span class="lineno"> 119</span> 			Bundle savedInstanceState) {
-<span class="lineno"> 120</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
-<span class="lineno"> 121</span> 		mFooter.setVisibility(View.GONE);
-<span class="lineno"> 122</span> 		View view = super.onCreateView(inflater, container, savedInstanceState);
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java">../../src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java</a>:148</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno"> 145</span> 	@Override
+<span class="lineno"> 146</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<span class="lineno"> 147</span> 			Bundle savedInstanceState) {
+<span class="lineno"> 148</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
+<span class="lineno"> 149</span> 		mFooter.setVisibility(View.GONE);
+<span class="lineno"> 150</span> 		View view = super.onCreateView(inflater, container, savedInstanceState);
 </pre>
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/RecentIssueListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/RecentIssueListAdapter.java</a>:34</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno">  31</span> 	@Override
-<span class="lineno">  32</span> 	public View getHeaderView(int i, View convertView, ViewGroup parent) {
-<span class="lineno">  33</span> 		if (convertView == null) {
-<span class="lineno">  34</span> 			convertView = infrator.inflate(R.layout.listheader_connection, <span class="errorspan">null);</span>
-<span class="lineno">  35</span> 		}
-<span class="lineno">  36</span> 		if(convertView == null)
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/RecentIssueListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/RecentIssueListAdapter.java</a>:36</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno">  33</span> 	@Override
+<span class="lineno">  34</span> 	public View getHeaderView(int i, View convertView, ViewGroup parent) {
+<span class="lineno">  35</span> 		if (convertView == null) {
+<span class="lineno">  36</span> 			convertView = infrator.inflate(R.layout.listheader_connection, <span class="errorspan">null);</span>
+<span class="lineno">  37</span> 		}
+<span class="lineno">  38</span> 		if(convertView == null)
 </pre>
 <span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/activity/TabActivity.java">../../src/main/java/jp/redmine/redmineclient/activity/TabActivity.java</a>:121</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
 <span class="lineno"> 118</span> 			@Override
@@ -254,75 +254,127 @@ When inflating a layout, avoid passing in null as the parent view, since otherwi
 <br/><div class="moreinfo">More info: <a href="http://www.doubleencore.com/2013/05/layout-inflation-as-intended">http://www.doubleencore.com/2013/05/layout-inflation-as-intended</a>
 </div><br/>To suppress this error, use the issue id "InflateParams" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 </div>
+<a name="GradleDependency"></a>
+<div class="issue">
+<div class="id"><a href="#" title="Return to top">GradleDependency: Obsolete Gradle Dependency</a><div class="issueSeparator"></div>
+</div>
+<div class="warningslist">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:51</span>: <span class="message">A newer version of com.android.support:support-v4 than 21.0.+ is available: 22.0.0</span><br /><pre class="errorlines">
+<span class="lineno">  48</span>     compile project(':Transdroid')
+<span class="lineno">  49</span>     androidTestCompile 'com.google.guava:guava:+'
+<span class="lineno">  50</span>     androidTestCompile 'junit:junit:4.8.2'
+<span class="lineno">  51</span>     <span class="errorspan">compile 'com.android.support:support-v4:21.0.+'</span>
+<span class="lineno">  52</span>     compile 'com.android.support:appcompat-v7:21.0.+'
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+</pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">A newer version of com.android.support:appcompat-v7 than 21.0.+ is available: 22.0.0</span><br /><pre class="errorlines">
+<span class="lineno">  49</span>     androidTestCompile 'com.google.guava:guava:+'
+<span class="lineno">  50</span>     androidTestCompile 'junit:junit:4.8.2'
+<span class="lineno">  51</span>     compile 'com.android.support:support-v4:21.0.+'
+<span class="lineno">  52</span>     <span class="errorspan">compile 'com.android.support:appcompat-v7:21.0.+'</span>
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="lineno">  54</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
+</pre>
+</div>
+<div class="metadata">Note: This issue has an associated quickfix operation in Android Studio/IntelliJ&nbsp;<img alt="Fix" border="0" align="top" src="lint-results_files/lint-run.png" />
+<br>
+Priority: 4 / 10<br/>
+Category: Correctness</div>
+Severity: <span class="warning">Warning</span><div class="summary">
+Explanation: Obsolete Gradle Dependency.</div>
+<div class="explanation">
+This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.
+</div>
+<br/><div class="moreinfo">More info: </div><br/>To suppress this error, use the issue id "GradleDependency" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>
 <a name="GradleDynamicVersion"></a>
 <div class="issue">
 <div class="id"><a href="#" title="Return to top">GradleDynamicVersion: Gradle Dynamic Version</a><div class="issueSeparator"></div>
 </div>
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:47</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.google.guava:guava:+)</span><br /><pre class="errorlines">
-<span class="lineno">  44</span> 
-<span class="lineno">  45</span> dependencies {
-<span class="lineno">  46</span>     compile project(':Transdroid')
-<span class="lineno">  47</span>     <span class="errorspan">androidTestCompile 'com.google.guava:guava:+'</span>
-<span class="lineno">  48</span>     androidTestCompile 'junit:junit:4.8.2'
-<span class="lineno">  49</span>     compile 'com.android.support:support-v4:21.0.+'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:49</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.google.guava:guava:+)</span><br /><pre class="errorlines">
+<span class="lineno">  46</span> 
+<span class="lineno">  47</span> dependencies {
+<span class="lineno">  48</span>     compile project(':Transdroid')
+<span class="lineno">  49</span>     <span class="errorspan">androidTestCompile 'com.google.guava:guava:+'</span>
+<span class="lineno">  50</span>     androidTestCompile 'junit:junit:4.8.2'
+<span class="lineno">  51</span>     compile 'com.android.support:support-v4:21.0.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:49</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.support:support-v4:21.0.+)</span><br /><pre class="errorlines">
-<span class="lineno">  46</span>     compile project(':Transdroid')
-<span class="lineno">  47</span>     androidTestCompile 'com.google.guava:guava:+'
-<span class="lineno">  48</span>     androidTestCompile 'junit:junit:4.8.2'
-<span class="lineno">  49</span>     <span class="errorspan">compile 'com.android.support:support-v4:21.0.+'</span>
-<span class="lineno">  50</span>     compile 'com.android.support:appcompat-v7:21.0.+'
-<span class="lineno">  51</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:51</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.support:support-v4:21.0.+)</span><br /><pre class="errorlines">
+<span class="lineno">  48</span>     compile project(':Transdroid')
+<span class="lineno">  49</span>     androidTestCompile 'com.google.guava:guava:+'
+<span class="lineno">  50</span>     androidTestCompile 'junit:junit:4.8.2'
+<span class="lineno">  51</span>     <span class="errorspan">compile 'com.android.support:support-v4:21.0.+'</span>
+<span class="lineno">  52</span>     compile 'com.android.support:appcompat-v7:21.0.+'
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:50</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.support:appcompat-v7:21.0.+)</span><br /><pre class="errorlines">
-<span class="lineno">  47</span>     androidTestCompile 'com.google.guava:guava:+'
-<span class="lineno">  48</span>     androidTestCompile 'junit:junit:4.8.2'
-<span class="lineno">  49</span>     compile 'com.android.support:support-v4:21.0.+'
-<span class="lineno">  50</span>     <span class="errorspan">compile 'com.android.support:appcompat-v7:21.0.+'</span>
-<span class="lineno">  51</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
-<span class="lineno">  52</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.support:appcompat-v7:21.0.+)</span><br /><pre class="errorlines">
+<span class="lineno">  49</span>     androidTestCompile 'com.google.guava:guava:+'
+<span class="lineno">  50</span>     androidTestCompile 'junit:junit:4.8.2'
+<span class="lineno">  51</span>     compile 'com.android.support:support-v4:21.0.+'
+<span class="lineno">  52</span>     <span class="errorspan">compile 'com.android.support:appcompat-v7:21.0.+'</span>
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="lineno">  54</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:52</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (se.emilsjolander:stickylistheaders:2.+)</span><br /><pre class="errorlines">
-<span class="lineno">  49</span>     compile 'com.android.support:support-v4:21.0.+'
-<span class="lineno">  50</span>     compile 'com.android.support:appcompat-v7:21.0.+'
-<span class="lineno">  51</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
-<span class="lineno">  52</span>     <span class="errorspan">compile 'se.emilsjolander:stickylistheaders:2.+'</span>
-<span class="lineno">  53</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
-<span class="lineno">  54</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:54</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (se.emilsjolander:stickylistheaders:2.+)</span><br /><pre class="errorlines">
+<span class="lineno">  51</span>     compile 'com.android.support:support-v4:21.0.+'
+<span class="lineno">  52</span>     compile 'com.android.support:appcompat-v7:21.0.+'
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="lineno">  54</span>     <span class="errorspan">compile 'se.emilsjolander:stickylistheaders:2.+'</span>
+<span class="lineno">  55</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
+<span class="lineno">  56</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:53</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.j256.ormlite:ormlite-core:4.+)</span><br /><pre class="errorlines">
-<span class="lineno">  50</span>     compile 'com.android.support:appcompat-v7:21.0.+'
-<span class="lineno">  51</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
-<span class="lineno">  52</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
-<span class="lineno">  53</span>     <span class="errorspan">compile 'com.j256.ormlite:ormlite-core:4.+'</span>
-<span class="lineno">  54</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
-<span class="lineno">  55</span>     compile 'org.apache.commons:commons-lang3:3.+'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:55</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.j256.ormlite:ormlite-core:4.+)</span><br /><pre class="errorlines">
+<span class="lineno">  52</span>     compile 'com.android.support:appcompat-v7:21.0.+'
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="lineno">  54</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
+<span class="lineno">  55</span>     <span class="errorspan">compile 'com.j256.ormlite:ormlite-core:4.+'</span>
+<span class="lineno">  56</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
+<span class="lineno">  57</span>     compile 'com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:54</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.j256.ormlite:ormlite-android:4.+)</span><br /><pre class="errorlines">
-<span class="lineno">  51</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
-<span class="lineno">  52</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
-<span class="lineno">  53</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
-<span class="lineno">  54</span>     <span class="errorspan">compile 'com.j256.ormlite:ormlite-android:4.+'</span>
-<span class="lineno">  55</span>     compile 'org.apache.commons:commons-lang3:3.+'
-<span class="lineno">  56</span>     compile 'net.java:textile-j:2.2'
+<button id="GradleDynamicVersionDivLink" onclick="reveal('GradleDynamicVersionDiv');" />+ 5 More Occurrences...</button>
+<div id="GradleDynamicVersionDiv" style="display: none">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:56</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.j256.ormlite:ormlite-android:4.+)</span><br /><pre class="errorlines">
+<span class="lineno">  53</span>     compile 'com.andreabaccega:android-form-edittext:1.1.0'
+<span class="lineno">  54</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
+<span class="lineno">  55</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
+<span class="lineno">  56</span>     <span class="errorspan">compile 'com.j256.ormlite:ormlite-android:4.+'</span>
+<span class="lineno">  57</span>     compile 'com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+'
+<span class="lineno">  58</span>     apt 'com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:55</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.apache.commons:commons-lang3:3.+)</span><br /><pre class="errorlines">
-<span class="lineno">  52</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
-<span class="lineno">  53</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
-<span class="lineno">  54</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
-<span class="lineno">  55</span>     <span class="errorspan">compile 'org.apache.commons:commons-lang3:3.+'</span>
-<span class="lineno">  56</span>     compile 'net.java:textile-j:2.2'
-<span class="lineno">  57</span>     compile 'org.commonjava.googlecode.markdown4j:markdown4j:+'
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:57</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+)</span><br /><pre class="errorlines">
+<span class="lineno">  54</span>     compile 'se.emilsjolander:stickylistheaders:2.+'
+<span class="lineno">  55</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
+<span class="lineno">  56</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
+<span class="lineno">  57</span>     <span class="errorspan">compile 'com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+'</span>
+<span class="lineno">  58</span>     apt 'com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+'
+<span class="lineno">  59</span>     compile 'org.apache.commons:commons-lang3:3.+'
 </pre>
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:57</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.commonjava.googlecode.markdown4j:markdown4j:+)</span><br /><pre class="errorlines">
-<span class="lineno">  54</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
-<span class="lineno">  55</span>     compile 'org.apache.commons:commons-lang3:3.+'
-<span class="lineno">  56</span>     compile 'net.java:textile-j:2.2'
-<span class="lineno">  57</span>     <span class="errorspan">compile 'org.commonjava.googlecode.markdown4j:markdown4j:+'</span>
-<span class="lineno">  58</span> }
-<span class="lineno">  59</span> 
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:58</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+)</span><br /><pre class="errorlines">
+<span class="lineno">  55</span>     compile 'com.j256.ormlite:ormlite-core:4.+'
+<span class="lineno">  56</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
+<span class="lineno">  57</span>     compile 'com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+'
+<span class="lineno">  58</span>     <span class="errorspan">apt 'com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+'</span>
+<span class="lineno">  59</span>     compile 'org.apache.commons:commons-lang3:3.+'
+<span class="lineno">  60</span>     compile 'net.java:textile-j:2.2'
 </pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:59</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.apache.commons:commons-lang3:3.+)</span><br /><pre class="errorlines">
+<span class="lineno">  56</span>     compile 'com.j256.ormlite:ormlite-android:4.+'
+<span class="lineno">  57</span>     compile 'com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+'
+<span class="lineno">  58</span>     apt 'com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+'
+<span class="lineno">  59</span>     <span class="errorspan">compile 'org.apache.commons:commons-lang3:3.+'</span>
+<span class="lineno">  60</span>     compile 'net.java:textile-j:2.2'
+<span class="lineno">  61</span>     compile 'org.commonjava.googlecode.markdown4j:markdown4j:+'
+</pre>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:61</span>: <span class="message">Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (org.commonjava.googlecode.markdown4j:markdown4j:+)</span><br /><pre class="errorlines">
+<span class="lineno">  58</span>     apt 'com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+'
+<span class="lineno">  59</span>     compile 'org.apache.commons:commons-lang3:3.+'
+<span class="lineno">  60</span>     compile 'net.java:textile-j:2.2'
+<span class="lineno">  61</span>     <span class="errorspan">compile 'org.commonjava.googlecode.markdown4j:markdown4j:+'</span>
+<span class="lineno">  62</span> }
+<span class="lineno">  63</span> 
+</pre>
+</div>
 </div>
 <div class="metadata">Note: This issue has an associated quickfix operation in Android Studio/IntelliJ&nbsp;<img alt="Fix" border="0" align="top" src="lint-results_files/lint-run.png" />
 <br>
@@ -478,6 +530,31 @@ Explanation: Content provider does not require permission.</div>
 Content providers are exported by default and any application on the system can potentially use them to read and write data. If the content provider provides access to sensitive data, it should be protected by specifying <code>export=false</code> in the manifest or by protecting it with a permission that can be granted to other applications.
 </div>
 <br/><div class="moreinfo">More info: </div><br/>To suppress this error, use the issue id "ExportedContentProvider" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>
+<a name="ExportedService"></a>
+<div class="issue">
+<div class="id"><a href="#" title="Return to top">ExportedService: Exported service does not require permission</a><div class="issueSeparator"></div>
+</div>
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:70</span>: <span class="message">Exported service does not require permission</span><br /><pre class="errorlines">
+<span class="lineno">  67</span> 			android:authorities="jp.redmine.redmineclient.provider.cache"
+<span class="lineno">  68</span> 			android:exported="false"
+<span class="lineno">  69</span> 			/>
+<span class="lineno">  70</span> 		<span class="errorspan">&lt;service android:name=".service.Sync" android:process=":fetcher"></span>
+<span class="lineno">  71</span> 			&lt;intent-filter>
+<span class="lineno">  72</span> 				&lt;action android:name="jp.redmine.redmineclient.service.ISync" />
+</pre>
+</div>
+<div class="metadata">Note: This issue has an associated quickfix operation in Eclipse/ADT & Android Studio/IntelliJ&nbsp;<img alt="Fix" border="0" align="top" src="lint-results_files/lint-run.png" />
+<br>
+Priority: 5 / 10<br/>
+Category: Security</div>
+Severity: <span class="warning">Warning</span><div class="summary">
+Explanation: Exported service does not require permission.</div>
+<div class="explanation">
+Exported services (services which either set <code>exported=true</code> or contain an intent-filter and do not specify <code>exported=false</code>) should define a permission that an entity must have in order to launch the service or bind to it. Without this, any application can use this service.
+</div>
+<br/><div class="moreinfo">More info: </div><br/>To suppress this error, use the issue id "ExportedService" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 </div>
 
 <a name="Performance"></a>

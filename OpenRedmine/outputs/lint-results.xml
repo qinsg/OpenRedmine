@@ -15,26 +15,8 @@
         errorLine2="                                                   ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/ConnectionList.java"
-            line="98"
+            line="97"
             column="52"/>
-    </issue>
-
-    <issue
-        id="InflateParams"
-        severity="Warning"
-        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)"
-        category="Correctness"
-        priority="5"
-        summary="Layout Inflation without a Parent"
-        explanation="When inflating a layout, avoid passing in null as the parent view, since otherwise any layout parameters on the root of the inflated layout will be ignored."
-        url="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
-        urls="http://www.doubleencore.com/2013/05/layout-inflation-as-intended"
-        errorLine1="   convertView = infrator.inflate(R.layout.listheader_connection, null);"
-        errorLine2="                                                                  ~~~~">
-        <location
-            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/adapter/FavoriteProjectListAdapter.java"
-            line="31"
-            column="67"/>
     </issue>
 
     <issue
@@ -69,7 +51,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueList.java"
-            line="162"
+            line="169"
             column="55"/>
     </issue>
 
@@ -87,7 +69,7 @@
         errorLine2="                                                        ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueList.java"
-            line="164"
+            line="171"
             column="57"/>
     </issue>
 
@@ -123,7 +105,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueView.java"
-            line="183"
+            line="180"
             column="55"/>
     </issue>
 
@@ -195,7 +177,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java"
-            line="120"
+            line="148"
             column="55"/>
     </issue>
 
@@ -213,7 +195,7 @@
         errorLine2="                                                                  ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/adapter/RecentIssueListAdapter.java"
-            line="34"
+            line="36"
             column="67"/>
     </issue>
 
@@ -272,6 +254,40 @@
     </issue>
 
     <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:support-v4 than 21.0.+ is available: 22.0.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:support-v4:21.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
+            line="51"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:appcompat-v7 than 21.0.+ is available: 22.0.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:appcompat-v7:21.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
+            line="52"
+            column="5"/>
+    </issue>
+
+    <issue
         id="GradleDynamicVersion"
         severity="Warning"
         message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.google.guava:guava:+)"
@@ -284,7 +300,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="47"
+            line="49"
             column="5"/>
     </issue>
 
@@ -301,7 +317,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="49"
+            line="51"
             column="5"/>
     </issue>
 
@@ -318,7 +334,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="50"
+            line="52"
             column="5"/>
     </issue>
 
@@ -335,7 +351,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="52"
+            line="54"
             column="5"/>
     </issue>
 
@@ -352,7 +368,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="53"
+            line="55"
             column="5"/>
     </issue>
 
@@ -369,7 +385,41 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="54"
+            line="56"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        severity="Warning"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+)"
+        category="Correctness"
+        priority="4"
+        summary="Gradle Dynamic Version"
+        explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
+        errorLine1="    compile &apos;com.tojc.ormlite.android:ormlite-content-provider-library:1.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
+            line="57"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        severity="Warning"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+)"
+        category="Correctness"
+        priority="4"
+        summary="Gradle Dynamic Version"
+        explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
+        errorLine1="    apt &apos;com.tojc.ormlite.android:ormlite-content-provider-compiler:1.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
+            line="58"
             column="5"/>
     </issue>
 
@@ -386,7 +436,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="55"
+            line="59"
             column="5"/>
     </issue>
 
@@ -403,7 +453,7 @@
         quickfix="studio">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
-            line="57"
+            line="61"
             column="5"/>
     </issue>
 
@@ -519,6 +569,23 @@ There are cases where this is not the case, so this issue is a warning rather th
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/AndroidManifest.xml"
             line="56"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="ExportedService"
+        severity="Warning"
+        message="Exported service does not require permission"
+        category="Security"
+        priority="5"
+        summary="Exported service does not require permission"
+        explanation="Exported services (services which either set `exported=true` or contain an intent-filter and do not specify `exported=false`) should define a permission that an entity must have in order to launch the service or bind to it. Without this, any application can use this service."
+        errorLine1="  &lt;service android:name=&quot;.service.Sync&quot; android:process=&quot;:fetcher&quot;>"
+        errorLine2="  ^"
+        quickfix="studio,adt">
+        <location
+            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/AndroidManifest.xml"
+            line="70"
             column="3"/>
     </issue>
 
