@@ -177,7 +177,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java"
-            line="148"
+            line="215"
             column="55"/>
     </issue>
 
@@ -256,7 +256,7 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of com.android.support:support-v4 than 21.0.+ is available: 22.0.0"
+        message="A newer version of com.android.support:support-v4 than 21.0.+ is available: 22.1.1"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"
@@ -273,7 +273,7 @@
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of com.android.support:appcompat-v7 than 21.0.+ is available: 22.0.0"
+        message="A newer version of com.android.support:appcompat-v7 than 21.0.+ is available: 22.1.1"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"
@@ -455,52 +455,6 @@
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/build.gradle"
             line="61"
             column="5"/>
-    </issue>
-
-    <issue
-        id="MissingTranslation"
-        severity="Fatal"
-        message="&quot;`navigation_drawer_open`&quot; is not translated in &quot;de&quot; (German), &quot;ja&quot; (Japanese), &quot;ru&quot; (Russian)"
-        category="Correctness:Messages"
-        priority="8"
-        summary="Incomplete translation"
-        explanation="If an application has more than one locale, then all the strings declared in one language should also be translated in all other languages.
-
-If the string should *not* be translated, you can add the attribute `translatable=&quot;false&quot;` on the `&lt;string>` element, or you can define all your non-translatable strings in a resource file called `donottranslate.xml`. Or, you can ignore the issue with a `tools:ignore=&quot;MissingTranslation&quot;` attribute.
-
-By default this detector allows regions of a language to just provide a subset of the strings and fall back to the standard language strings. You can require all regions to provide a full translation by setting the environment variable `ANDROID_LINT_COMPLETE_REGIONS`.
-
-You can tell lint (and other tools) which language is the default language in your `res/values/` folder by specifying `tools:locale=&quot;languageCode&quot;` for the root `&lt;resources>` element in your resource file. (The `tools` prefix refers to the namespace declaration `http://schemas.android.com/tools`.)"
-        errorLine1=" &lt;string name=&quot;navigation_drawer_open&quot;>Open navigation drawer&lt;/string>"
-        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="adt">
-        <location
-            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/res/values/strings.xml"
-            line="123"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="MissingTranslation"
-        severity="Fatal"
-        message="&quot;`navigation_drawer_close`&quot; is not translated in &quot;de&quot; (German), &quot;ja&quot; (Japanese), &quot;ru&quot; (Russian)"
-        category="Correctness:Messages"
-        priority="8"
-        summary="Incomplete translation"
-        explanation="If an application has more than one locale, then all the strings declared in one language should also be translated in all other languages.
-
-If the string should *not* be translated, you can add the attribute `translatable=&quot;false&quot;` on the `&lt;string>` element, or you can define all your non-translatable strings in a resource file called `donottranslate.xml`. Or, you can ignore the issue with a `tools:ignore=&quot;MissingTranslation&quot;` attribute.
-
-By default this detector allows regions of a language to just provide a subset of the strings and fall back to the standard language strings. You can require all regions to provide a full translation by setting the environment variable `ANDROID_LINT_COMPLETE_REGIONS`.
-
-You can tell lint (and other tools) which language is the default language in your `res/values/` folder by specifying `tools:locale=&quot;languageCode&quot;` for the root `&lt;resources>` element in your resource file. (The `tools` prefix refers to the namespace declaration `http://schemas.android.com/tools`.)"
-        errorLine1=" &lt;string name=&quot;navigation_drawer_close&quot;>Close navigation drawer&lt;/string>"
-        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        quickfix="adt">
-        <location
-            file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/res/values/strings.xml"
-            line="124"
-            column="10"/>
     </issue>
 
     <issue
