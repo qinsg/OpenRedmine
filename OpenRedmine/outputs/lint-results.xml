@@ -51,7 +51,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueList.java"
-            line="169"
+            line="249"
             column="55"/>
     </issue>
 
@@ -69,7 +69,7 @@
         errorLine2="                                                        ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueList.java"
-            line="171"
+            line="251"
             column="57"/>
     </issue>
 
@@ -159,7 +159,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/NewsList.java"
-            line="107"
+            line="196"
             column="55"/>
     </issue>
 
@@ -177,7 +177,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/ProjectList.java"
-            line="215"
+            line="225"
             column="55"/>
     </issue>
 
@@ -249,7 +249,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/WikiList.java"
-            line="147"
+            line="211"
             column="55"/>
     </issue>
 
