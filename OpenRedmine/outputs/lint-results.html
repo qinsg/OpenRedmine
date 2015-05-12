@@ -18,7 +18,7 @@ document.getElementById(id+'Link').style.display = 'none';
 <body>
 <h1>Lint Report</h1>
 <div class="titleSeparator"></div>
-Check performed at Wed May 06 19:29:54 UTC 2015.<br/>
+Check performed at Tue May 12 14:27:52 UTC 2015.<br/>
 0 errors and 140 warnings found:<br/><br/>
 <table class="overview">
 <tr><td></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
@@ -166,13 +166,13 @@ Check performed at Wed May 06 19:29:54 UTC 2015.<br/>
 </pre>
 <button id="InflateParamsDivLink" onclick="reveal('InflateParamsDiv');" />+ 9 More Occurrences...</button>
 <div id="InflateParamsDiv" style="display: none">
-<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java</a>:180</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
-<span class="lineno"> 177</span> 	@Override
-<span class="lineno"> 178</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-<span class="lineno"> 179</span> 			Bundle savedInstanceState) {
-<span class="lineno"> 180</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
-<span class="lineno"> 181</span> 		mFooter.setVisibility(View.GONE);
-<span class="lineno"> 182</span> 		View view = inflater.inflate(R.layout.page_issue, container, false);
+<span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java">../../src/main/java/jp/redmine/redmineclient/fragment/IssueView.java</a>:263</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
+<span class="lineno"> 260</span> 	@Override
+<span class="lineno"> 261</span> 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+<span class="lineno"> 262</span> 			Bundle savedInstanceState) {
+<span class="lineno"> 263</span> 		mFooter = inflater.inflate(R.layout.listview_footer,<span class="errorspan">null);</span>
+<span class="lineno"> 264</span> 		mFooter.setVisibility(View.GONE);
+<span class="lineno"> 265</span> 		View view = inflater.inflate(R.layout.page_issue, container, false);
 </pre>
 <span class="location"><a href="../../src/main/java/jp/redmine/redmineclient/adapter/JournalListAdapter.java">../../src/main/java/jp/redmine/redmineclient/adapter/JournalListAdapter.java</a>:409</span>: <span class="message">Avoid passing <code>null</code> as the view root (needed to resolve layout parameters on the inflated layout's root element)</span><br /><pre class="errorlines">
 <span class="lineno"> 406</span> 			convertView = null;

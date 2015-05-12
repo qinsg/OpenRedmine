@@ -105,7 +105,7 @@
         errorLine2="                                                      ~~~~">
         <location
             file="/home/travis/build/indication/OpenRedmine/OpenRedmine/src/main/java/jp/redmine/redmineclient/fragment/IssueView.java"
-            line="180"
+            line="263"
             column="55"/>
     </issue>
 

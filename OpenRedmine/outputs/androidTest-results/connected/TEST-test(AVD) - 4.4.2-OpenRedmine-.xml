@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="jp.redmine.redmineclient.testentity.TypeConverterTest" tests="6" failures="0" errors="0" skipped="0" time="0.437" timestamp="2015-05-06T19:31:58" hostname="localhost">
+<testsuite name="jp.redmine.redmineclient.testentity.TypeConverterTest" tests="6" failures="0" errors="0" skipped="0" time="0.554" timestamp="2015-05-12T14:32:06" hostname="localhost">
   <properties>
     <property name="device" value="test(AVD) - 4.4.2" />
     <property name="flavor" value="" />
     <property name="project" value="OpenRedmine" />
   </properties>
   <testcase name="testAndroidTestCaseSetupProperly" classname="jp.redmine.redmineclient.testentity.TypeConverterTest" time="0.051" />
-  <testcase name="testDateTimeLocal" classname="jp.redmine.redmineclient.testentity.TypeConverterTest" time="0.025" />
+  <testcase name="testDateTimeLocal" classname="jp.redmine.redmineclient.testentity.TypeConverterTest" time="0.051" />
   <testcase name="testDateTimeLocalMs" classname="jp.redmine.redmineclient.testentity.TypeConverterTest" time="0.051" />
   <testcase name="testDateTimeUTC" classname="jp.redmine.redmineclient.testentity.TypeConverterTest" time="0.025" />
   <testcase name="testAndroidTestCaseSetupProperly" classname="jp.redmine.redmineclient.testurl.RemoteUrlIssueTest" time="0.051" />
